@@ -22,8 +22,8 @@ export class GreeterComponent implements OnInit {
     req.setName("Grzegorz");
     client.sayHello(req, (error: ServiceError | null, responseMessage: HelloReply | null) => {
       if(error){
-        console.log(error.metadata);
-        this.response = error.message;
+        console.log(error.message);
+        this.response = "Opps something goes wrong";
         return;
       }
       this.response = responseMessage != null ? responseMessage.getMessage() : "";

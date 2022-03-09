@@ -1,0 +1,11 @@
+{
+    "protoc": {
+        "path": "C:\\Program Files\\Protoc-3.19.4-win64\\bin\\protoc.exe",
+        "compile_all_path": "${workspaceRoot}\\src\\Protos",
+        "compile_on_save": false,
+        "options": [
+            "--proto_path=${workspaceRoot}\\src\\Protos",
+            "--csharp_out=${workspaceRoot}\\src\\Protos\\.generated",
+        ]
+    }
+}
