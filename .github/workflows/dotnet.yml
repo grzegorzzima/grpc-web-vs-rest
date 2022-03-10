@@ -39,18 +39,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Start Sonar analysis
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: dotnet-sonarscanner begin /k:"grzegorzzima_grpc-web-vs-rest-backend" /o:"grzegorzzima" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
     - name: Restore dependencies
       run: dotnet restore ./server-app/
     - name: Build
       run: dotnet build --no-restore ./server-app/
     - name: Test
       run: dotnet test --no-build --verbosity normal ./server-app/
-    - name: End Sonar analysis
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
