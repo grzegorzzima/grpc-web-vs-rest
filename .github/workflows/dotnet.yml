@@ -3,12 +3,16 @@ name: Build and Scan .NET
 on:
   push:
     branches:
-    - main
+      - main
+    paths:
+      - server-app/**
   pull_request:
     types:
-    - opened
-    - synchronize 
-    - reopened
+      - opened
+      - synchronize 
+      - reopened
+    paths:
+      - server-app/**
 
 jobs:
   build:

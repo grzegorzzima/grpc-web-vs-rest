@@ -3,12 +3,16 @@ name: Scan Angular
 on:
   push:
     branches:
-    - main
+      - main
+    paths:
+      - web-app/**
   pull_request:
     types:
-    - opened
-    - synchronize 
-    - reopened
+      - opened
+      - synchronize 
+      - reopened
+    paths:
+      - web-app/**
 
 jobs:
   scan:
