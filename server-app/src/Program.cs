@@ -15,7 +15,7 @@ builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
 var app = builder.Build();
 
 app.UseRouting();
-//Adds grpc-web middlewares 
+// Adds grpc-web middlewares
 app.UseGrpcWeb(new GrpcWebOptions() { DefaultEnabled = true });
 app.UseCors();
 // Configure the HTTP request pipeline.
