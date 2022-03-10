@@ -19,14 +19,14 @@ jobs:
     - name: Cache SonarCloud packages
       uses: actions/cache@v1
       with:
-        path: ~\sonar\cache
+        path: ~/sonar/cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
     - name: Cache SonarCloud scanner
       id: cache-sonar-scanner
       uses: actions/cache@v1
       with:
-        path: .\.sonar\scanner
+        path: ./.sonar/scanner
         key: ${{ runner.os }}-sonar-scanner
         restore-keys: ${{ runner.os }}-sonar-scanner
     - name: Install SonarCloud scanner
@@ -34,8 +34,8 @@ jobs:
       shell: bash
       run: |
         pwd
-        mkdir -p .\.sonar\scanner
-        dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+        mkdir -p ./.sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
         ls -la
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
