@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HelloReply, HelloRequest } from 'src/generated/greet_pb';
-import { GreeterClient, ServiceError, Greeter } from 'src/generated/greet_pb_service';
+import { HelloReply, HelloRequest } from 'src/.generated/greet_pb';
+import { GreeterClient, ServiceError, Greeter } from 'src/.generated/greet_pb_service';
 import {grpc} from "@improbable-eng/grpc-web";
 
 @Component({

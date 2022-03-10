@@ -7,7 +7,7 @@ import { GreeterComponent } from './greeter/greeter.component';
 import { WeatherComponent } from './weather/weather/weather.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
