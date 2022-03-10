@@ -43,7 +43,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: ./.sonar/scanner/dotnet-sonarscanner begin /k:"grzegorzzima_grpc-web-vs-rest-backend" /o:"grzegorzzima" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+      run: dotnet-sonarscanner begin /k:"grzegorzzima_grpc-web-vs-rest-backend" /o:"grzegorzzima" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
     - name: Restore dependencies
       run: dotnet restore ./server-app/
     - name: Build
@@ -53,4 +53,4 @@ jobs:
     - name: End Sonar analysis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      run: dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
